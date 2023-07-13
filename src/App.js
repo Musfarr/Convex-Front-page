@@ -18,12 +18,14 @@ function App() {
     >
       <Bar />
 
-      <div className='my-64'>
+      <div className='my-32'>
       <Head />
       </div>
       <Img />
 
+    <div className=''>
       <Foot/>
+    </div>  
     </div>
   );
 }

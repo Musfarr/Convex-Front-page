@@ -4,6 +4,7 @@ import Head from './components/head';
 import Bar from './components/bar';
 import Img from './components/img';
 import Foot from './components/footer';
+import Logos from './components/logos';
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <div
       className='App'
       style={{
-        backgroundImage: `url('../pics/bg2.jpg')`,
+        backgroundImage: `url('https://www.convexinteractive.com/images/portfolio/img-portfolio-hero-image-mobile.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -22,8 +23,9 @@ function App() {
       <Head />
       </div>
       <Img />
+      <Logos/>
 
-    <div className=''>
+    <div className='mt-32'>
       <Foot/>
     </div>  
     </div>

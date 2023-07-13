@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Head from './components/head';
+import Bar from './components/bar';
+import Img from './components/img';
+import Foot from './components/footer';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className='App'
+      style={{
+        backgroundImage: `url('../pics/bg2.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <Bar />
+
+      <div className='my-64'>
+      <Head />
+      </div>
+      <Img />
+
+      <Foot/>
     </div>
   );
 }

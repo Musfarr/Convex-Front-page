@@ -1,6 +1,25 @@
-import React from "react";
+import React , {useState} from "react";
 
 const Bar = () => {
+
+  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+
+  const [ispDropdownOpen, setIspDropdownOpen] = useState(false);
+
+  const toggleProductsDropdown = () => {
+    setIsProductsDropdownOpen(!isProductsDropdownOpen);
+  };
+
+  const toggleServicesDropdown = () => {
+    setIsServicesDropdownOpen(!isServicesDropdownOpen);
+  };
+
+  const togglepDropdown = () => {
+    setIspDropdownOpen(!ispDropdownOpen);
+  };
+
+
   return (
     <nav className="">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -55,9 +74,9 @@ const Bar = () => {
 
 
             <li className="relative">
-              <button
-                id="dropdownNavbarLink"
-                data-dropdown-toggle="dropdownNavbar"
+              <button onClick={toggleProductsDropdown}
+                id="productsdropdownNavbarLink"
+                data-dropdown-toggle="productsdropdownNavbar"
                 className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
                 Products{" "}
@@ -79,8 +98,10 @@ const Bar = () => {
               </button>
 
               <div
-                id="dropdownNavbar"
-                className="absolute left-0 z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 mt-2 dark:bg-gray-700 dark:divide-gray-600"
+                id="productsdropdownNavbar"
+                className={`${
+                  isProductsDropdownOpen ? "block" : "hidden"
+                } absolute left-0 z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 mt-2 dark:bg-gray-700 dark:divide-gray-600`}
               >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-400"
@@ -111,14 +132,6 @@ const Bar = () => {
                     </a>
                   </li>
                 </ul>
-                <div className="py-1">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-                  >
-                    Sign out
-                  </a>
-                </div>
               </div>
             </li>
 
@@ -128,8 +141,9 @@ const Bar = () => {
            
             <li className="relative">
               <button
-                id="dropdownNavbarLink"
-                data-dropdown-toggle="dropdownNavbar"
+                onClick={toggleServicesDropdown}
+                id="dropdownNavbarLink2"
+                data-dropdown-toggle="dropdownNavbar2"
                 className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
                 Services{" "}
@@ -152,7 +166,9 @@ const Bar = () => {
 
               <div
                 id="dropdownNavbar"
-                className="absolute left-0 z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 mt-2 dark:bg-gray-700 dark:divide-gray-600"
+                className={`${
+                  isServicesDropdownOpen ? "block" : "hidden"
+                } absolute left-0 z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 mt-2 dark:bg-gray-700 dark:divide-gray-600`}
               >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-400"
@@ -183,14 +199,6 @@ const Bar = () => {
                     </a>
                   </li>
                 </ul>
-                <div className="py-1">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-                  >
-                    Sign out
-                  </a>
-                </div>
               </div>
             </li>
 
@@ -221,8 +229,9 @@ const Bar = () => {
 
             <li className="relative">
               <button
-                id="dropdownNavbarLink"
-                data-dropdown-toggle="dropdownNavbar"
+              onClick={togglepDropdown}
+                id="pdropdownNavbarLink"
+                data-dropdown-toggle="pdropdownNavbar"
                 className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
                 Portfolio{" "}
@@ -244,9 +253,10 @@ const Bar = () => {
               </button>
 
               <div
-                id="dropdownNavbar"
-                className="absolute left-0 z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 mt-2 dark:bg-gray-700 dark:divide-gray-600"
-              >
+                id="pdropdownNavbar"
+                className={`${
+                  ispDropdownOpen ? "block" : "hidden"
+                } absolute left-0 z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 mt-2 dark:bg-gray-700 dark:divide-gray-600`}              >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-400"
                   aria-labelledby="dropdownLargeButton"
@@ -276,14 +286,6 @@ const Bar = () => {
                     </a>
                   </li>
                 </ul>
-                <div className="py-1">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-                  >
-                    Sign out
-                  </a>
-                </div>
               </div>
             </li>
 

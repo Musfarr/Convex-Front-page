@@ -2,22 +2,35 @@ import React , {useState} from "react";
 
 const Bar = () => {
 
-  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  // const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
+  // const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
 
-  const [ispDropdownOpen, setIspDropdownOpen] = useState(false);
+  // const [ispDropdownOpen, setIspDropdownOpen] = useState(false);
 
-  const toggleProductsDropdown = () => {
-    setIsProductsDropdownOpen(!isProductsDropdownOpen);
-  };
+  // const toggleProductsDropdown = () => {
+  //   setIsProductsDropdownOpen(!isProductsDropdownOpen);
+  // };
 
-  const toggleServicesDropdown = () => {
-    setIsServicesDropdownOpen(!isServicesDropdownOpen);
-  };
+  // const toggleServicesDropdown = () => {
+  //   setIsServicesDropdownOpen(!isServicesDropdownOpen);
+  // };
 
-  const togglepDropdown = () => {
-    setIspDropdownOpen(!ispDropdownOpen);
-  };
+  // const togglepDropdown = () => {
+  //   setIspDropdownOpen(!ispDropdownOpen);
+  // };
+
+  const [activedropdown , setactiveDropdown] = useState(false);
+
+  const toggledropdown = (dropdownid) =>{
+
+    if (activedropdown === dropdownid) {
+        setactiveDropdown(null);
+    }
+
+    else{
+      setactiveDropdown(dropdownid) ;
+    }
+  }
 
 
   return (
@@ -74,7 +87,7 @@ const Bar = () => {
 
 
             <li className="relative">
-              <button onClick={toggleProductsDropdown}
+              <button onClick={() => toggledropdown('product')}
                 id="productsdropdownNavbarLink"
                 data-dropdown-toggle="productsdropdownNavbar"
                 className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
@@ -97,10 +110,12 @@ const Bar = () => {
                 </svg>
               </button>
 
+
+
               <div
                 id="productsdropdownNavbar"
                 className={`${
-                  isProductsDropdownOpen ? "block" : "hidden"
+                  activedropdown === "product" ? "block" : "hidden"
                 } absolute left-0 z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 mt-2 dark:bg-gray-700 dark:divide-gray-600`}
               >
                 <ul
@@ -141,7 +156,7 @@ const Bar = () => {
            
             <li className="relative">
               <button
-                onClick={toggleServicesDropdown}
+                onClick={() => toggledropdown('service')}
                 id="dropdownNavbarLink2"
                 data-dropdown-toggle="dropdownNavbar2"
                 className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
@@ -167,7 +182,7 @@ const Bar = () => {
               <div
                 id="dropdownNavbar"
                 className={`${
-                  isServicesDropdownOpen ? "block" : "hidden"
+                  activedropdown === 'service' ? "block" : "hidden"
                 } absolute left-0 z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 mt-2 dark:bg-gray-700 dark:divide-gray-600`}
               >
                 <ul
@@ -229,7 +244,7 @@ const Bar = () => {
 
             <li className="relative">
               <button
-              onClick={togglepDropdown}
+              onClick={() => toggledropdown('port')}
                 id="pdropdownNavbarLink"
                 data-dropdown-toggle="pdropdownNavbar"
                 className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
@@ -255,7 +270,7 @@ const Bar = () => {
               <div
                 id="pdropdownNavbar"
                 className={`${
-                  ispDropdownOpen ? "block" : "hidden"
+                  activedropdown === 'port' ? "block" : "hidden"
                 } absolute left-0 z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 mt-2 dark:bg-gray-700 dark:divide-gray-600`}              >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-400"

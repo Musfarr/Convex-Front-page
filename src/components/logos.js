@@ -2,10 +2,9 @@ import React from 'react'
 
 const Logos = () => {
   return (
-    <div className='logodiv'>
+    <div className='logodiv' style={{backgroundColor : 'red'}}>
       
-      
-
+    
     </div>
   )
 }

@@ -45,3 +45,9 @@ body{
 
   background-color: black;
 }
+.bgImage{
+
+background-image: url(../public/pics/s1.jpg);
+background-size: cover;
+height: 100%;
+}

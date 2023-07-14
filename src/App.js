@@ -5,30 +5,31 @@ import Bar from './components/bar';
 import Img from './components/img';
 import Foot from './components/footer';
 import Logos from './components/logos';
-
+// import bgImg from './public/pics/s1.jpg';
 
 function App() {
   return (
+    <div>
     <div
-      className='App'
+      className='App bgImage'
       style={{
-        backgroundImage: `url('https://www.convexinteractive.com/images/portfolio/img-portfolio-hero-image-mobile.jpg')`,
+        // backgroundImage: {bgImg},
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
-    >
+      >
       <Bar />
 
-      <div className='my-32'>
+      <div className='mt-48' >
       <Head />
       </div>
+
+    </div>
+
       <Img />
       <Logos/>
-
-    <div className='mt-32'>
       <Foot/>
-    </div>  
-    </div>
+</div>
   );
 }
 

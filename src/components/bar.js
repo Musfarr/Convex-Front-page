@@ -33,6 +33,18 @@ const Bar = () => {
   }
 
 
+
+  //for dropdown in mobile view
+  const [ divclassname , setdivclassname] = useState("hidden w-full md:flex md:w-auto");
+  
+  const togglevisibility = () => {
+
+    const newdivname = divclassname ===  "hidden w-full md:flex md:w-auto" ? "w-full md:flex md:w-auto " : "hidden w-full md:flex md:w-auto" 
+    setdivclassname(newdivname);
+    // setdivclassname(!divclassname);
+  }
+
+
   return (
     <nav className="">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -40,18 +52,20 @@ const Bar = () => {
           <img
             src="https://www.convexinteractive.com/images/logoblack.svg"
             className="h-8 mr-3"
-            alt="Flowbite Logo"
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             
           </span>
         </a>
         <button
-          data-collapse-toggle="navbar-dropdown"
+          data-collapse-toggle="navbar-dropdown1"
           type="button"
+          onClick={togglevisibility}
           className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-dropdown"
-          aria-expanded="false"
+          
+
+          aria-controls="navbar-dropdown1"
+          aria-expanded="true"
         >
           <span className="sr-only">Open main menu</span>
           <svg
@@ -60,6 +74,7 @@ const Bar = () => {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 17 14"
+            
           >
             <path
               stroke="currentColor"
@@ -67,15 +82,18 @@ const Bar = () => {
               strokeLinejoin="round"
               strokeWidth="2"
               d="M1 1h15M1 7h15M1 13h15"
+               fillRule="evenodd"
+               clipRule="evenodd"
             />
           </svg>
         </button>
-        <div className="hidden w-full md:flex md:w-auto" id="navbar-dropdown">
+
+        <div className={divclassname} id="navbar-dropdown1">
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 md:flex-row md:space-x-5 md:mt-0">
             <li>
               <a
                 href="#"
-                className="block py-2 pl-3 pr-4 text-white bg- rounded md:bg-transparent md:text-white-700 md:p-0 md:dark:text-white-500 dark:bg-blue-600 md:dark:bg-transparent"
+                className="block py-2 pl-3 pr-4 text-white bg- rounded md:bg-transparent md:text-white-700 md:p-0 md:dark:text-white-500 md:dark:bg-transparent"
                 aria-current="page"
               >
                 Our Story
@@ -99,6 +117,8 @@ const Bar = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 10 6"
+                  fillRule="evenodd"
+              clipRule="evenodd"
                 >
                   <path
                     stroke="currentColor"
@@ -106,6 +126,8 @@ const Bar = () => {
                     strokeLinejoin="round"
                     strokeWidth="2"
                     d="m1 1 4 4 4-4"
+                    fillRule="evenodd"
+              clipRule="evenodd"
                   />
                 </svg>
               </button>
@@ -168,6 +190,8 @@ const Bar = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 10 6"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                 >
                   <path
                     stroke="currentColor"
@@ -175,6 +199,8 @@ const Bar = () => {
                     strokeLinejoin="round"
                     strokeWidth="2"
                     d="m1 1 4 4 4-4"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
               </button>
@@ -223,7 +249,7 @@ const Bar = () => {
             <li>
               <a
                 href="#"
-                className="block py-2 pl-3 pr-4 text-white bg- rounded md:bg-transparent md:text-white-700 md:p-0 md:dark:text-white-500 dark:bg-blue-600 md:dark:bg-transparent"
+                className="block py-2 pl-3 pr-4 text-white bg- rounded md:bg-transparent md:text-white-700 md:p-0 md:dark:text-white-500 md:dark:bg-transparent"
                 aria-current="page"
               >
                 Whatsapp Business Api
@@ -232,7 +258,7 @@ const Bar = () => {
             <li>
               <a
                 href="#"
-                className="block py-2 pl-3 pr-4 text-white bg- rounded md:bg-transparent md:text-white-700 md:p-0 md:dark:text-white-500 dark:bg-blue-600 md:dark:bg-transparent"
+                className="block py-2 pl-3 pr-4 text-white bg- rounded md:bg-transparent md:text-white-700 md:p-0 md:dark:text-white-500  md:dark:bg-transparent"
                 aria-current="page"
               >
                 Awards and Recognitions 
@@ -256,6 +282,8 @@ const Bar = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 10 6"
+                  fillRule="evenodd"
+              clipRule="evenodd"
                 >
                   <path
                     stroke="currentColor"
@@ -263,6 +291,8 @@ const Bar = () => {
                     strokeLinejoin="round"
                     strokeWidth="2"
                     d="m1 1 4 4 4-4"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
               </button>
